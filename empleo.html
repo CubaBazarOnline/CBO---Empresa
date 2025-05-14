@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Únete como promotor de CubaHostPro y gana comisiones por cada cliente referido">
+    <title>Oportunidad Laboral - Promotor CubaHostPro</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #f39c12;
+            --danger-color: #e74c3c;
+            --success-color: #2ecc71;
+            --light-bg: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #dddddd;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            flex: 1;
+        }
+        
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+        
+        h1 {
+            color: var(--secondary-color);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin: 1.5rem 0 1rem;
+            font-size: 1.5rem;
+        }
+        
+        h3 {
+            color: var(--secondary-color);
+            margin: 1.2rem 0 0.8rem;
+            font-size: 1.2rem;
+        }
+        
+        .highlight-box {
+            background-color: rgba(243, 156, 18, 0.1);
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .benefit-card {
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .benefit-icon {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .input-field:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .btn-danger {
+            background-color: var(--danger-color);
+        }
+        
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+        
+        .btn-success {
+            background-color: var(--success-color);
+        }
+        
+        .btn-success:hover {
+            background-color: #27ae60;
+        }
+        
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            transform: translateY(-20px);
+            transition: transform 0.3s;
+        }
+        
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+        
+        .modal-header {
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            gap: 1rem;
+        }
+        
+        .modal-footer .btn {
+            width: 48%;
+        }
+        
+        .privacy-notice {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        
+        .footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer {
+            font-size: 0.8rem;
+            margin-top: 1rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-footer {
+                flex-direction: column;
+            }
+            
+            .modal-footer .btn {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header {
+                padding: 1rem;
+            }
+            
+            .card {
+                padding: 1.2rem;
+            }
+            
+            .highlight-box {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">CubaHostPro</div>
+        <h1>Programa de Promotores</h1>
+    </header>
+    
+    <main class="container">
+        <div class="card">
+            <h2>Oportunidad de Ingresos como Promotor Digital</h2>
+            
+            <div class="highlight-box">
+                <h3>¡Gana hasta 10% de comisión por cada cliente referido!</h3>
+                <p>Únete a nuestro equipo de promotores y comienza a generar ingresos promocionando los servicios de hosting y dominios de CubaHostPro. Cada vez que un cliente mencione tu código al contratar, recibirás tu comisión directamente en tu cuenta bancaria.</p>
+            </div>
+            
+            <h2>¿Qué ofrece CubaHostPro?</h2>
+            <p>CubaHostPro es el proveedor líder de servicios de hosting y dominios en Cuba, ofreciendo soluciones confiables y asequibles para emprendedores, negocios y desarrolladores web.</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💻</div>
+                    <h3>Hosting Confiable</h3>
+                    <p>Servidores optimizados con 99.9% de uptime y soporte técnico especializado.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌐</div>
+                    <h3>Dominios .cu y .com</h3>
+                    <p>Registro y renovación de dominios con las mejores tarifas del mercado cubano.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Seguridad SSL</h3>
+                    <p>Certificados de seguridad para proteger los datos de tus clientes y sus visitantes.</p>
+                </div>
+            </div>
+            
+            <h2>Funciones del Promotor</h2>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                <li style="margin-bottom: 0.5rem;">Promocionar activamente los servicios de CubaHostPro en redes sociales y comunidades digitales</li>
+                <li style="margin-bottom: 0.5rem;">Generar leads calificados interesados en hosting y dominios</li>
+                <li style="margin-bottom: 0.5rem;">Asesorar a clientes potenciales sobre los planes disponibles</li>
+                <li style="margin-bottom: 0.5rem;">Asegurar que los clientes usen tu código único al contratar</li>
+                <li>Mantener comunicación con el equipo de CubaHostPro</li>
+            </ul>
+            
+            <h2>Beneficios para Ti</h2>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                <li style="margin-bottom: 0.5rem;"><strong>Comisiones atractivas:</strong> 10% del valor de cada plan contratado</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Pagos puntuales:</strong> Transferencias bancarias semanales</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Material promocional:</strong> Recibirás banners, textos y recursos gráficos</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Capacitación:</strong> Entrenamiento inicial sobre nuestros servicios</li>
+                <li><strong>Crecimiento profesional:</strong> Posibilidad de aumentar tu porcentaje de comisión según resultados</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <h3>Ejemplo de Ganancias</h3>
+                <p>Si refieres 5 clientes que contratan nuestro plan básico de $50 CUP/mes:</p>
+                <p><strong>Tu ganancia:</strong> 5 clientes × $5 CUP = $25 CUP por esa semana</p>
+                <p>Clientes recurrentes generan ingresos pasivos mes tras mes.</p>
+            </div>
+            
+            <h2>Requisitos para Participar</h2>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                <li style="margin-bottom: 0.5rem;">Mayor de 18 años</li>
+                <li style="margin-bottom: 0.5rem;">Acceso a internet y dispositivos móviles</li>
+                <li style="margin-bottom: 0.5rem;">Cuenta bancaria activa en Cuba</li>
+                <li style="margin-bottom: 0.5rem;">Habilidades básicas de comunicación digital</li>
+                <li>Disponibilidad para dedicar al menos 5 horas semanales</li>
+            </ul>
+            
+            <h2>Registro de Promotores</h2>
+            <form id="promotorForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" class="input-field" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefono">Número de teléfono (WhatsApp preferiblemente):</label>
+                    <input type="tel" id="telefono" name="telefono" class="input-field" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tarjeta">Número de tarjeta bancaria (para depósito de comisiones):</label>
+                    <input type="text" id="tarjeta" name="tarjeta" class="input-field" required>
+                    <small style="display: block; margin-top: 0.3rem; color: #666;">Solo usaremos esta información para transferir tus comisiones</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ubicacion">Ubicación (Provincia/Municipio):</label>
+                    <input type="text" id="ubicacion" name="ubicacion" class="input-field" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="experiencia">Breve descripción de tu experiencia en promoción/marketing (opcional):</label>
+                    <textarea id="experiencia" name="experiencia" class="input-field" rows="3"></textarea>
+                </div>
+                
+                <div class="privacy-notice">
+                    <p><strong>Aviso de Privacidad:</strong> La información proporcionada será utilizada exclusivamente para el programa de promotores de CubaHostPro. Nos comprometemos a proteger tus datos personales y no compartirlos con terceros sin tu consentimiento expreso.</p>
+                </div>
+                
+                <button type="button" id="submitBtn" class="btn">Enviar Solicitud</button>
+            </form>
+        </div>
+    </main>
+    
+    <!-- Modal de Confirmación -->
+    <div class="modal-overlay" id="confirmationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Confirmar Envío de Información</h3>
+            </div>
+            <p>Estás a punto de enviar tu información personal y bancaria a través de WhatsApp al equipo de CubaHostPro (+53 50369270).</p>
+            <p><strong>Por favor verifica que:</strong></p>
+            <ul style="margin-left: 1.5rem; margin: 1rem 0;">
+                <li style="margin-bottom: 0.5rem;">Todos los datos son correctos</li>
+                <li style="margin-bottom: 0.5rem;">Estás de acuerdo con nuestro Aviso de Privacidad</li>
+                <li>Comprendes que esta información será usada para el programa de promotores</li>
+            </ul>
+            <div class="modal-footer">
+                <button id="cancelBtn" class="btn btn-danger">Cancelar</button>
+                <button id="confirmSendBtn" class="btn btn-success">Confirmar y Enviar</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal de Éxito -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 style="color: var(--success-color);">¡Solicitud Enviada!</h3>
+            </div>
+            <p>Tu información ha sido enviada correctamente al equipo de CubaHostPro.</p>
+            <p>Recibirás un mensaje de confirmación por WhatsApp en las próximas 24 horas con tu código de promotor y los materiales de trabajo.</p>
+            <p style="margin-top: 1rem;"><strong>Gracias por unirte a nuestro equipo.</strong></p>
+            <div class="modal-footer" style="justify-content: center;">
+                <button id="closeSuccessBtn" class="btn">Cerrar</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p>CubaHostPro - Programa de Promotores</p>
+        <p class="disclaimer">© 2023 Todos los derechos reservados. Los pagos de comisiones están sujetos a verificación y cumplimiento de los términos del programa.</p>
+    </footer>
+    
+    <script>
+        // Elementos del DOM
+        const promotorForm = document.getElementById('promotorForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const confirmationModal = document.getElementById('confirmationModal');
+        const successModal = document.getElementById('successModal');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const confirmSendBtn = document.getElementById('confirmSendBtn');
+        const closeSuccessBtn = document.getElementById('closeSuccessBtn');
+        
+        // Validar y mostrar modal de confirmación
+        submitBtn.addEventListener('click', function() {
+            // Validar campos requeridos
+            const requiredFields = ['nombre', 'telefono', 'tarjeta', 'ubicacion'];
+            let isValid = true;
+            
+            requiredFields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                if (!field.value.trim()) {
+                    field.style.borderColor = 'var(--danger-color)';
+                    isValid = false;
+                } else {
+                    field.style.borderColor = 'var(--border-color)';
+                }
+            });
+            
+            if (!isValid) {
+                alert('Por favor completa todos los campos requeridos marcados en rojo.');
+                return;
+            }
+            
+            // Mostrar modal de confirmación
+            confirmationModal.classList.add('active');
+        });
+        
+        // Cancelar envío
+        cancelBtn.addEventListener('click', function() {
+            confirmationModal.classList.remove('active');
+        });
+        
+        // Confirmar y enviar por WhatsApp
+        confirmSendBtn.addEventListener('click', function() {
+            // Obtener valores del formulario
+            const formData = {
+                nombre: document.getElementById('nombre').value,
+                telefono: document.getElementById('telefono').value,
+                tarjeta: document.getElementById('tarjeta').value,
+                ubicacion: document.getElementById('ubicacion').value,
+                experiencia: document.getElementById('experiencia').value
+            };
+            
+            // Crear mensaje para WhatsApp
+            const message = `*Nueva Solicitud de Promotor CubaHostPro*%0A%0A` +
+                          `*Nombre completo:* ${formData.nombre}%0A` +
+                          `*Teléfono:* ${formData.telefono}%0A` +
+                          `*Tarjeta bancaria:* ${formData.tarjeta}%0A` +
+                          `*Ubicación:* ${formData.ubicacion}%0A` +
+                          `*Experiencia:* ${formData.experiencia || 'No especificada'}%0A%0A` +
+                          `Quiero unirme al programa de promotores de CubaHostPro`;
+            
+            // Crear enlace de WhatsApp
+            const whatsappUrl = `https://wa.me/5350369270?text=${message}`;
+            
+            // Ocultar modal de confirmación
+            confirmationModal.classList.remove('active');
+            
+            // Abrir WhatsApp
+            window.open(whatsappUrl, '_blank');
+            
+            // Mostrar modal de éxito
+            setTimeout(() => {
+                successModal.classList.add('active');
+            }, 500);
+            
+            // Limpiar formulario
+            promotorForm.reset();
+        });
+        
+        // Cerrar modal de éxito
+        closeSuccessBtn.addEventListener('click', function() {
+            successModal.classList.remove('active');
+        });
+        
+        // Cerrar modales al hacer clic fuera del contenido
+        [confirmationModal, successModal].forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
