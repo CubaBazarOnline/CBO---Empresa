@@ -1,11 +1,143 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" dir="ltr">
 <head> 
+    <!-- Metadatos básicos -->
     <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1"> 
-    <title>CBO - Empresa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0a0a1a">
+    
+    <!-- Elemento canónico -->
+    <link rel="canonical" href="https://cbo-empresa.vercel.app/" />
+    
+    <!-- Metadatos SEO -->
+    <title>CBO | Soluciones Tecnológicas y Hosting en Cuba | CubaHostPro</title>
+    <meta name="description" content="Empresa líder en desarrollo web y hosting en Cuba. Ofrecemos CubaHostPro con 99.9% uptime, dominios .cu y soluciones empresariales digitales.">
+    <meta name="keywords" content="hosting Cuba, dominio .cu, desarrollo web Cuba, empleo tecnológico Cuba, CBO, CubaHostPro, alojamiento web Cuba">
+    <meta name="author" content="Cuba Business Opportunities">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="general">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="CBO | Soluciones Tecnológicas y Hosting Premium en Cuba">
+    <meta property="og:description" content="Hosting confiable, desarrollo web profesional y oportunidades de empleo tecnológico en Cuba con nuestros servicios CubaHostPro.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cbo-empresa.vercel.app/">
+    <meta property="og:image" content="https://cbo-empresa.vercel.app/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="CBO Cuba">
+    <meta property="og:locale" content="es_ES">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CBO | Soluciones Tecnológicas en Cuba">
+    <meta name="twitter:description" content="Hosting, desarrollo web y empleo tecnológico con los mejores servicios digitales de Cuba.">
+    <meta name="twitter:image" content="https://cbo-empresa.vercel.app/images/twitter-card.jpg">
+    <meta name="twitter:site" content="@cbo_cuba">
+    <meta name="twitter:creator" content="@cbo_cuba">
+    
+    <!-- Favicon y iconos -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0066ff">
+    
+    <!-- Preconexión y precarga -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Segoe+UI:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Segoe+UI:wght@400;500&display=swap"></noscript>
+    
+    <!-- Google Site Verification -->
     <meta name="google-site-verification" content="Hk6HowCzUMMA7z_yJk5ZifBlWsNFFYoXUITN-9CuOGo" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Segoe+UI:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics con consentimiento -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        
+        // Función para cargar analytics después del consentimiento
+        function loadAnalytics() {
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX', { 
+                'anonymize_ip': true,
+                'cookie_domain': 'auto',
+                'cookie_flags': 'SameSite=None;Secure'
+            });
+            
+            // Eventos personalizados
+            document.addEventListener('chatInteraction', function(e) {
+                gtag('event', 'chat_interaction', e.detail);
+            });
+        }
+        
+        // Cargar solo si el usuario acepta
+        if(localStorage.getItem('analyticsConsent') === 'true') {
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+            document.head.appendChild(script);
+            loadAnalytics();
+        }
+    </script>
+    
+    <!-- Estructura JSON-LD mejorada -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "CBO Cuba",
+        "url": "https://cbo-empresa.vercel.app/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://cbo-empresa.vercel.app/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "CBO",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://cbo-empresa.vercel.app/images/logo.png",
+                "width": 300,
+                "height": 60
+            },
+            "sameAs": [
+                "https://www.facebook.com/cboempresa",
+                "https://twitter.com/cbo_cuba",
+                "https://www.linkedin.com/company/cbo-cuba"
+            ]
+        },
+        "description": "Empresa líder en soluciones tecnológicas y servicios de hosting en Cuba"
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://cbo-empresa.vercel.app/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Servicios",
+            "item": "https://cbo-empresa.vercel.app/#servicios"
+        },{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Hosting Cuba",
+            "item": "https://cbo-empresa.vercel.app/cubahostpro"
+        }]
+    }
+    </script>
+    
     <style>
         :root {
             --primary: #00f7ff;
@@ -36,6 +168,7 @@
             overflow-x: hidden;
             display: flex;
             flex-direction: column;
+            line-height: 1.6;
         }
 
         .container {
@@ -55,6 +188,7 @@
             margin-bottom: 2rem;
             text-shadow: var(--glow);
             animation: textGlow 2s infinite alternate;
+            line-height: 1.2;
         }
 
         @keyframes textGlow {
@@ -89,10 +223,12 @@
             z-index: 1;
         }
 
-        .futuristic-button:hover {
+        .futuristic-button:hover,
+        .futuristic-button:focus {
             transform: translateY(-3px);
             box-shadow: 0 5px 20px rgba(0, 247, 255, 0.4);
             color: var(--primary);
+            outline: none;
         }
 
         .futuristic-button::before {
@@ -146,9 +282,11 @@
             box-shadow: 0 0 30px var(--accent);
         }
 
-        .assistant-button:hover {
+        .assistant-button:hover,
+        .assistant-button:focus {
             transform: scale(1.1);
             box-shadow: 0 0 30px rgba(0, 247, 255, 0.8);
+            outline: none;
         }
 
         .assistant-chat {
@@ -210,9 +348,11 @@
             border-radius: 50%;
         }
 
-        .chat-action:hover {
+        .chat-action:hover,
+        .chat-action:focus {
             color: var(--primary);
             background: rgba(0, 247, 255, 0.1);
+            outline: none;
         }
 
         .chat-messages {
@@ -310,9 +450,11 @@
             justify-content: center;
         }
 
-        .chat-send:hover {
+        .chat-send:hover,
+        .chat-send:focus {
             transform: scale(1.1);
             box-shadow: 0 0 10px var(--primary);
+            outline: none;
         }
 
         .chat-options {
@@ -336,9 +478,11 @@
             min-width: calc(50% - 4px);
         }
 
-        .chat-option:hover {
+        .chat-option:hover,
+        .chat-option:focus {
             background: rgba(0, 247, 255, 0.3);
             transform: translateY(-2px);
+            outline: none;
         }
 
         .typing-indicator {
@@ -490,6 +634,81 @@
             100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
         }
 
+        /* Banner de Cookies */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 26, 0.95);
+            border-top: 1px solid var(--primary);
+            padding: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            z-index: 9999;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+
+        .cookie-text {
+            flex: 1;
+            min-width: 250px;
+            font-size: 0.9rem;
+        }
+
+        .cookie-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .cookie-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .cookie-accept {
+            background: var(--primary);
+            color: var(--dark);
+            border: none;
+        }
+
+        .cookie-accept:hover {
+            background: var(--secondary);
+        }
+
+        .cookie-settings {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .cookie-settings:hover {
+            background: rgba(0, 247, 255, 0.1);
+        }
+
+        /* Mejoras de accesibilidad */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .assistant-chat {
@@ -511,13 +730,23 @@
                 width: 100%;
                 text-align: center;
             }
+            
+            .cookie-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .cookie-actions {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head> 
 <body> 
     <main class="container">
-        <h1>BIENVENIDO</h1>
-
+        <h1>BIENVENIDO A CBO</h1>
+        
         <div class="button-container">
             <a href="inicio.html" class="futuristic-button">Inicio</a>
             <a href="chp.html" class="futuristic-button">CubaHostPro</a>
@@ -561,6 +790,23 @@
         </div>
         <button class="toast-close" id="toastClose" aria-label="Cerrar notificación">×</button>
     </div>
+
+    <!-- Banner de Cookies -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-text">
+            Utilizamos cookies para mejorar tu experiencia. Al continuar navegando aceptas nuestro uso de cookies.
+        </div>
+        <div class="cookie-actions">
+            <button class="cookie-btn cookie-accept" id="cookieAccept">Aceptar</button>
+            <button class="cookie-btn cookie-settings" id="cookieSettings">Configurar</button>
+        </div>
+    </div>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXX"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
 
     <script>
         // Base de conocimiento del asistente
@@ -644,6 +890,7 @@
                 this.createParticles();
                 this.typeWriterEffect();
                 this.initAssistant();
+                this.initCookieBanner();
             }
             
             setupEventListeners() {
@@ -679,6 +926,68 @@
                 window.addEventListener('mousemove', resetTimer);
                 window.addEventListener('keypress', resetTimer);
                 resetTimer();
+            }
+            
+            initCookieBanner() {
+                const cookieBanner = document.getElementById('cookieBanner');
+                const cookieAccept = document.getElementById('cookieAccept');
+                const cookieSettings = document.getElementById('cookieSettings');
+                
+                // Mostrar banner si no hay consentimiento
+                if (!localStorage.getItem('cookieConsent')) {
+                    setTimeout(() => {
+                        cookieBanner.classList.add('show');
+                    }, 2000);
+                }
+                
+                // Manejar aceptación de cookies
+                cookieAccept.addEventListener('click', () => {
+                    localStorage.setItem('cookieConsent', 'true');
+                    localStorage.setItem('analyticsConsent', 'true');
+                    cookieBanner.classList.remove('show');
+                    
+                    // Cargar analytics después del consentimiento
+                    this.loadAnalytics();
+                    
+                    // Trackear aceptación
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'cookie_consent', {
+                            'event_category': 'engagement',
+                            'event_label': 'accepted'
+                        });
+                    }
+                });
+                
+                // Manejar configuración de cookies
+                cookieSettings.addEventListener('click', () => {
+                    this.addAssistantMessage("Configuración de cookies: Actualmente solo usamos cookies esenciales y de análisis.");
+                    this.toggleChat();
+                    cookieBanner.classList.remove('show');
+                });
+            }
+            
+            loadAnalytics() {
+                // Cargar Google Analytics
+                const script = document.createElement('script');
+                script.async = true;
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+                document.head.appendChild(script);
+                
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-XXXXXXXXXX', { 
+                    'anonymize_ip': true,
+                    'cookie_domain': 'auto',
+                    'cookie_flags': 'SameSite=None;Secure'
+                });
+                
+                // Trackear página vista
+                gtag('event', 'page_view', {
+                    'page_title': document.title,
+                    'page_location': window.location.href,
+                    'page_path': window.location.pathname
+                });
             }
             
             createParticles() {
@@ -732,10 +1041,6 @@
                         this.removeTypingIndicator();
                         this.addAssistantMessage(this.getRandomResponse('greetings'));
                         this.showMainOptions();
-                        
-                        setTimeout(() => {
-                            this.requestNotificationPermission();
-                        }, 3000);
                     }, 1500);
                 }, 2000);
             }
@@ -759,6 +1064,14 @@
                     this.state.unreadMessages = 0;
                     this.updateNotificationBadge();
                     this.scrollToBottom();
+                    
+                    // Trackear interacción con el chatbot
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'chat_open', {
+                            'event_category': 'engagement',
+                            'event_label': 'chat_interaction'
+                        });
+                    }
                 }
             }
             
@@ -844,6 +1157,16 @@
                 
                 this.addUserMessage(message);
                 this.elements.input.value = '';
+                
+                // Trackear interacción con el chatbot
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'chat_interaction', {
+                        'event_category': 'engagement',
+                        'event_label': 'user_message',
+                        'value': message.length
+                    });
+                }
+                
                 this.processUserInput(message);
             }
             
@@ -960,6 +1283,15 @@
                                     text: "Quiero contratar",
                                     action: () => {
                                         this.addAssistantMessage("Excelente elección. Redirigiendo a CubaHostPro...");
+                                        
+                                        // Trackear conversión
+                                        if (typeof gtag !== 'undefined') {
+                                            gtag('event', 'conversion', {
+                                                'event_category': 'engagement',
+                                                'event_label': 'cubahostpro_interest'
+                                            });
+                                        }
+                                        
                                         setTimeout(() => {
                                             window.location.href = "CubaHostPro/index.html";
                                         }, 1500);
@@ -1011,6 +1343,15 @@
                                     text: "Enviar mi CV",
                                     action: () => {
                                         this.addAssistantMessage("Redirigiendo a tu cliente de email...");
+                                        
+                                        // Trackear conversión
+                                        if (typeof gtag !== 'undefined') {
+                                            gtag('event', 'conversion', {
+                                                'event_category': 'engagement',
+                                                'event_label': 'job_application'
+                                            });
+                                        }
+                                        
                                         setTimeout(() => {
                                             window.location.href = "mailto:empleo@cbo.cu?subject=Aplicación%20de%20empleo";
                                         }, 1500);
@@ -1090,6 +1431,8 @@
                     button.className = 'chat-option';
                     button.textContent = option.text;
                     button.addEventListener('click', option.action);
+                    button.setAttribute('role', 'button');
+                    button.setAttribute('tabindex', '0');
                     this.elements.options.appendChild(button);
                 });
                 
@@ -1126,6 +1469,15 @@
                 }
                 
                 this.addSystemMessage(`Notificación: ${message}`);
+                
+                // Trackear notificación
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'notification_shown', {
+                        'event_category': 'engagement',
+                        'event_label': title,
+                        'value': message.length
+                    });
+                }
             }
             
             showToast(title, message, duration = 5000) {
@@ -1166,6 +1518,14 @@
                         if (permission === "granted") {
                             this.state.conversationContext.notificationPermission = true;
                             this.addSystemMessage("Notificaciones del navegador activadas");
+                            
+                            // Trackear permiso
+                            if (typeof gtag !== 'undefined') {
+                                gtag('event', 'notification_permission', {
+                                    'event_category': 'engagement',
+                                    'event_label': 'granted'
+                                });
+                            }
                         }
                     });
                 }
@@ -1174,7 +1534,34 @@
 
         // Inicializar la aplicación cuando el DOM esté listo
         document.addEventListener('DOMContentLoaded', () => {
-            new VirtualAssistant();
+            const assistant = new VirtualAssistant();
+            
+            // Trackear eventos de los botones principales
+            document.querySelectorAll('.futuristic-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'select_content', {
+                            'event_category': 'navigation',
+                            'event_label': this.textContent.trim(),
+                            'transport_type': 'beacon'
+                        });
+                    }
+                });
+            });
+            
+            // Trackear tiempo en página
+            let pageLoadTime = Date.now();
+            window.addEventListener('beforeunload', () => {
+                if (typeof gtag !== 'undefined') {
+                    const timeSpent = Date.now() - pageLoadTime;
+                    gtag('event', 'timing_complete', {
+                        'name': 'time_on_page',
+                        'value': timeSpent,
+                        'event_category': 'engagement',
+                        'event_label': window.location.pathname
+                    });
+                }
+            });
         });
     </script>
 </body>
